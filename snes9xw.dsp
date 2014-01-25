@@ -100,7 +100,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /Zp4 /MTd /W3 /GX /ZI /Od /I "unzip" /I "H:\glide2x" /I "e:\zlib" /I "snes9x\unzip" /I "H:\FMOD\api\inc" /D "SPC700_SHUTDOWN" /D "CPU_SHUTDOWN" /D "ZLIB" /D "VAR_CYCLES" /D "SPC700_C" /D "UNZIP_SUPPORT" /D "ZSNES_C4" /D "ZSNES_FX" /D "EXECUTE_SUPERFX_PER_LINE" /D "__WIN32__" /D "__MSC__" /D "USE_GLIDE" /D "USE_OPENGL" /D "NDEBUG" /D "NETPLAY_SUPPORT" /D "FMOD_SUPPORT" /D "OLD_COLOUR_BLENDING" /FR /YX /FD /c
-# ADD CPP /nologo /Zp4 /MT /W3 /GX /Zi /O2 /I "unzip" /I "H:\glide2x" /I "e:\zlib" /I "snes9x\unzip" /I "H:\FMOD\api\inc" /D "JMA_SUPPORT" /D "SDD1_DECOMP" /D "CORRECT_VRAM_READS" /D "JP_FIX" /D "SPC700_SHUTDOWN" /D "CPU_SHUTDOWN" /D "ZLIB" /D "VAR_CYCLES" /D "UNZIP_SUPPORT" /D "ZSNES_FX" /D "EXECUTE_SUPERFX_PER_LINE" /D "__WIN32__" /D "__MSC__" /D "USE_OPENGL" /D "NDEBUG" /D "FMOD_SUPPORT" /D "OLD_COLOUR_BLENDING" /YX /FD /c
+# ADD CPP /nologo /Zp4 /MT /W3 /GX /Zi /Od /I "unzip" /I "H:\glide2x" /I "e:\zlib" /I "snes9x\unzip" /I "H:\FMOD\api\inc" /D "JMA_SUPPORT" /D "SDD1_DECOMP" /D "CORRECT_VRAM_READS" /D "JP_FIX" /D "SPC700_SHUTDOWN" /D "CPU_SHUTDOWN" /D "ZLIB" /D "VAR_CYCLES" /D "UNZIP_SUPPORT" /D "ZSNES_FX" /D "EXECUTE_SUPERFX_PER_LINE" /D "__WIN32__" /D "__MSC__" /D "NDEBUG" /D "FMOD_SUPPORT" /D "OLD_COLOUR_BLENDING" /YX /FD /c
 # SUBTRACT CPP /Fr
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o /win32 "NUL"
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o /win32 "NUL"
@@ -112,7 +112,7 @@ BSC32=bscmake.exe
 LINK32=link.exe
 # ADD BASE LINK32 opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib wsock32.lib advapi32.lib winmm.lib ddraw.lib dsound.lib dxguid.lib snes9xw.lib glide2x.lib delayimp.lib fmodvc.lib /nologo /subsystem:windows /incremental:yes /debug /machine:I386 /libpath:"H:\FMOD\api\lib" /libpath:"H:\glide2x\lib" /delayload:fmod.dll
 # SUBTRACT BASE LINK32 /profile
-# ADD LINK32 zdll.lib comctl32.lib comdlg32.lib shell32.lib ole32.lib winmm.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib wsock32.lib advapi32.lib ddraw.lib dsound.lib dxguid.lib delayimp.lib fmodvc.lib vfw32.lib /nologo /subsystem:windows /debug /machine:I386 /libpath:"H:\FMOD\api\lib" /libpath:"H:\glide2x\lib" /delayload:fmod.dll
+# ADD LINK32 zdll.lib comctl32.lib comdlg32.lib shell32.lib ole32.lib winmm.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib wsock32.lib advapi32.lib ddraw.lib dsound.lib dxguid.lib delayimp.lib fmodvc.lib vfw32.lib /nologo /subsystem:windows /debug /machine:I386 /out:"..\snes9xw.exe" /libpath:"H:\FMOD\api\lib" /libpath:"H:\glide2x\lib" /delayload:fmod.dll
 # SUBTRACT LINK32 /profile /incremental:yes
 
 !ENDIF 

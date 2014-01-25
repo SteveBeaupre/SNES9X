@@ -6,9 +6,101 @@
 --------------------Configuration: Snes9X - Win32 C core--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP18D.tmp" with contents
+Creating command line "rc.exe /l 0x413 /fo"Snes9X___Win32_C_core/0snes9X.res" /d "NDEBUG" "C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\0snes9X.rc"" 
+Creating temporary file "C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CD7.tmp" with contents
 [
-zdll.lib comctl32.lib comdlg32.lib shell32.lib ole32.lib winmm.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib wsock32.lib advapi32.lib ddraw.lib dsound.lib dxguid.lib delayimp.lib fmodvc.lib vfw32.lib /nologo /subsystem:windows /incremental:no /pdb:"Snes9X___Win32_C_core/snes9xw.pdb" /debug /machine:I386 /out:"Snes9X___Win32_C_core/snes9xw.exe" /libpath:"H:\FMOD\api\lib" /libpath:"H:\glide2x\lib" /delayload:fmod.dll 
+/nologo /Zp4 /MT /W3 /GX /Zi /Od /I "unzip" /I "H:\glide2x" /I "e:\zlib" /I "snes9x\unzip" /I "H:\FMOD\api\inc" /D "JMA_SUPPORT" /D "SDD1_DECOMP" /D "CORRECT_VRAM_READS" /D "JP_FIX" /D "SPC700_SHUTDOWN" /D "CPU_SHUTDOWN" /D "ZLIB" /D "VAR_CYCLES" /D "UNZIP_SUPPORT" /D "ZSNES_FX" /D "EXECUTE_SUPERFX_PER_LINE" /D "__WIN32__" /D "__MSC__" /D "NDEBUG" /D "FMOD_SUPPORT" /D "OLD_COLOUR_BLENDING" /Fp"Snes9X___Win32_C_core/snes9xw.pch" /YX /Fo"Snes9X___Win32_C_core/" /Fd"Snes9X___Win32_C_core/" /FD /c 
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\AVIOutput.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\DirectX.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\InputCustom.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Render.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\wsnes9x.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\2xsai.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\Apudebug.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\C4.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\cheats2.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\clip.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\globals.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\SNES9X\loadzip.CPP"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\movie.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\Netplay.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\Sa1.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\sa1cpu.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\Sdd1.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\Server.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\snaporig.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\Snes9x.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\spc700.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\Srtc.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\unzip\Explode.c"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\unzip\Unreduce.c"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\unzip\Unshrink.c"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9x\unzip\Unzip.c"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\7zlzma.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\crc32.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\iiostrm.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\inbyte.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\jma.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\lzma.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\lzmadec.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\s9x-jma.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\winout.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Auxmath.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\c4emu.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\obc1.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\screenshot.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\sdd1emu.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\seta.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\seta010.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\seta011.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\seta018.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\spc7110.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CD7.tmp" 
+Creating temporary file "C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CD8.tmp" with contents
+[
+/nologo /Zp4 /MT /W3 /GX /Zi /Od /I "unzip" /I "H:\glide2x" /I "e:\zlib" /I "snes9x\unzip" /I "H:\FMOD\api\inc" /D "JMA_SUPPORT" /D "SDD1_DECOMP" /D "CORRECT_VRAM_READS" /D "JP_FIX" /D "SPC700_SHUTDOWN" /D "CPU_SHUTDOWN" /D "ZLIB" /D "VAR_CYCLES" /D "UNZIP_SUPPORT" /D "ZSNES_FX" /D "EXECUTE_SUPERFX_PER_LINE" /D "__WIN32__" /D "__MSC__" /D "NDEBUG" /D "FMOD_SUPPORT" /D "OLD_COLOUR_BLENDING" /Fp"Snes9X___Win32_C_core/snes9xw.pch" /YX /Fo"Release/Emu/" /Fd"Release/Emu/" /FD /c 
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\Win32.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\apu.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\cheats.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\data.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\debug.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\dma.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\gfx.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\snapshot.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\soundux.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\tile.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CD8.tmp" 
+Creating temporary file "C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CD9.tmp" with contents
+[
+/nologo /Zp4 /MT /W3 /GX /Zi /Od /Ob0 /I "unzip" /I "H:\glide2x" /I "e:\zlib" /I "snes9x\unzip" /I "H:\FMOD\api\inc" /D "JMA_SUPPORT" /D "SDD1_DECOMP" /D "CORRECT_VRAM_READS" /D "JP_FIX" /D "SPC700_SHUTDOWN" /D "CPU_SHUTDOWN" /D "ZLIB" /D "VAR_CYCLES" /D "UNZIP_SUPPORT" /D "ZSNES_FX" /D "EXECUTE_SUPERFX_PER_LINE" /D "__WIN32__" /D "__MSC__" /D "NDEBUG" /D "FMOD_SUPPORT" /D "OLD_COLOUR_BLENDING" /Fp"Snes9X___Win32_C_core/snes9xw.pch" /YX /Fo"Release/Emu/" /Fd"Release/Emu/" /FD /c 
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\cpu.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CD9.tmp" 
+Creating temporary file "C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CDA.tmp" with contents
+[
+/nologo /Zp4 /MT /W3 /GX /Zi /Od /Ob0 /I "unzip" /I "H:\glide2x" /I "e:\zlib" /I "snes9x\unzip" /I "H:\FMOD\api\inc" /D "JMA_SUPPORT" /D "SDD1_DECOMP" /D "CORRECT_VRAM_READS" /D "JP_FIX" /D "SPC700_SHUTDOWN" /D "CPU_SHUTDOWN" /D "ZLIB" /D "VAR_CYCLES" /D "UNZIP_SUPPORT" /D "ZSNES_FX" /D "EXECUTE_SUPERFX_PER_LINE" /D "__WIN32__" /D "__MSC__" /D "NDEBUG" /D "FMOD_SUPPORT" /D "OLD_COLOUR_BLENDING" /Fp"Snes9X___Win32_C_core/snes9xw.pch" /YX /Fo"Snes9X___Win32_C_core/" /Fd"Snes9X___Win32_C_core/" /FD /c 
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\cpuexec.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\cpuops.cpp"
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\dsp1.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CDA.tmp" 
+Creating temporary file "C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CDB.tmp" with contents
+[
+/nologo /Zp4 /MT /W3 /GX /O2 /Ob2 /I "unzip" /I "H:\glide2x" /I "e:\zlib" /I "snes9x\unzip" /I "H:\FMOD\api\inc" /D "JMA_SUPPORT" /D "SDD1_DECOMP" /D "CORRECT_VRAM_READS" /D "JP_FIX" /D "SPC700_SHUTDOWN" /D "CPU_SHUTDOWN" /D "ZLIB" /D "VAR_CYCLES" /D "UNZIP_SUPPORT" /D "ZSNES_FX" /D "EXECUTE_SUPERFX_PER_LINE" /D "__WIN32__" /D "__MSC__" /D "NDEBUG" /D "FMOD_SUPPORT" /D "OLD_COLOUR_BLENDING" /Fp"Snes9X___Win32_C_core/snes9xw.pch" /YX /Fo"Snes9X___Win32_C_core/" /Fd"Snes9X___Win32_C_core/" /FD /c 
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\memmap.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CDB.tmp" 
+Creating temporary file "C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CDC.tmp" with contents
+[
+/nologo /Zp4 /MT /W3 /GX /Zi /Od /Ob2 /I "unzip" /I "H:\glide2x" /I "e:\zlib" /I "snes9x\unzip" /I "H:\FMOD\api\inc" /D "JMA_SUPPORT" /D "SDD1_DECOMP" /D "CORRECT_VRAM_READS" /D "JP_FIX" /D "SPC700_SHUTDOWN" /D "CPU_SHUTDOWN" /D "ZLIB" /D "VAR_CYCLES" /D "UNZIP_SUPPORT" /D "ZSNES_FX" /D "EXECUTE_SUPERFX_PER_LINE" /D "__WIN32__" /D "__MSC__" /D "NDEBUG" /D "FMOD_SUPPORT" /D "OLD_COLOUR_BLENDING" /Fp"Snes9X___Win32_C_core/snes9xw.pch" /YX /Fo"Release/Emu/" /Fd"Release/Emu/" /FD /c 
+"C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\Snes9X\ppu.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CDC.tmp" 
+Creating temporary file "C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CDD.tmp" with contents
+[
+zdll.lib comctl32.lib comdlg32.lib shell32.lib ole32.lib winmm.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib wsock32.lib advapi32.lib ddraw.lib dsound.lib dxguid.lib delayimp.lib fmodvc.lib vfw32.lib /nologo /subsystem:windows /incremental:no /pdb:"Snes9X___Win32_C_core/snes9xw.pdb" /debug /machine:I386 /out:"..\snes9xw.exe" /libpath:"H:\FMOD\api\lib" /libpath:"H:\glide2x\lib" /delayload:fmod.dll 
 ".\Snes9X___Win32_C_core\AVIOutput.obj"
 ".\Snes9X___Win32_C_core\DirectX.obj"
 ".\Snes9X___Win32_C_core\InputCustom.obj"
@@ -81,15 +173,96 @@ zdll.lib comctl32.lib comdlg32.lib shell32.lib ole32.lib winmm.lib opengl32.lib 
 ".\Snes9X___Win32_C_core\spc7110.obj"
 ".\Snes9X___Win32_C_core\0snes9X.res"
 ]
-Creating command line "link.exe @C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP18D.tmp"
+Creating command line "link.exe @C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP1CDD.tmp"
 <h3>Output Window</h3>
+Compiling resources...
+Compiling...
+AVIOutput.cpp
+DirectX.cpp
+InputCustom.cpp
+Render.cpp
+wsnes9x.cpp
+2xsai.cpp
+Apudebug.cpp
+C4.cpp
+cheats2.cpp
+clip.cpp
+globals.cpp
+loadzip.CPP
+movie.cpp
+Netplay.cpp
+Sa1.cpp
+sa1cpu.cpp
+Sdd1.cpp
+Server.cpp
+snaporig.cpp
+Snes9x.cpp
+spc700.cpp
+Srtc.cpp
+Explode.c
+Unreduce.c
+Unshrink.c
+Unzip.c
+7zlzma.cpp
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\litcoder.h(52) : warning C4244: 'return' : conversion from 'unsigned long' to 'unsigned char', possible loss of data
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\litcoder.h(80) : warning C4244: 'return' : conversion from 'unsigned long' to 'unsigned char', possible loss of data
+crc32.cpp
+iiostrm.cpp
+inbyte.cpp
+jma.cpp
+lzma.cpp
+lzmadec.cpp
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\litcoder.h(52) : warning C4244: 'return' : conversion from 'unsigned long' to 'unsigned char', possible loss of data
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\litcoder.h(80) : warning C4244: 'return' : conversion from 'unsigned long' to 'unsigned char', possible loss of data
+s9x-jma.cpp
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\jma\s9x-jma.cpp(129) : warning C4101: 'jma_error' : unreferenced local variable
+winout.cpp
+Auxmath.cpp
+c4emu.cpp
+obc1.cpp
+screenshot.cpp
+sdd1emu.cpp
+seta.cpp
+seta010.cpp
+seta011.cpp
+seta018.cpp
+spc7110.cpp
+Compiling...
+Win32.cpp
+apu.cpp
+cheats.cpp
+data.cpp
+debug.cpp
+dma.cpp
+gfx.cpp
+snapshot.cpp
+soundux.cpp
+tile.cpp
+Compiling...
+cpu.cpp
+Compiling...
+cpuexec.cpp
+cpuops.cpp
+dsp1.cpp
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\dsp4emu.cpp(297) : warning C4244: '=' : conversion from 'double' to 'short', possible loss of data
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\dsp4emu.cpp(300) : warning C4244: '=' : conversion from 'double' to 'short', possible loss of data
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\dsp4emu.cpp(502) : warning C4244: '=' : conversion from 'double' to 'short', possible loss of data
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\dsp4emu.cpp(505) : warning C4244: '=' : conversion from 'double' to 'short', possible loss of data
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\dsp4emu.cpp(1064) : warning C4244: '=' : conversion from 'double' to 'short', possible loss of data
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\dsp4emu.cpp(1067) : warning C4244: '=' : conversion from 'double' to 'short', possible loss of data
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\dsp4emu.cpp(1509) : warning C4244: 'argument' : conversion from 'short' to 'unsigned char', possible loss of data
+C:\Jeux\Emulateur\snes9k\snes9x-1.43-src\snes9x\dsp4emu.cpp(1533) : warning C4244: 'argument' : conversion from 'short' to 'unsigned char', possible loss of data
+Compiling...
+memmap.cpp
+Compiling...
+ppu.cpp
 Linking...
 zdll.lib(d000034.o) : warning LNK4078: multiple ".text" sections found with different attributes (E0300020)
 
 
 
 <h3>Results</h3>
-snes9xw.exe - 0 error(s), 1 warning(s)
+snes9xw.exe - 0 error(s), 14 warning(s)
 </pre>
 </body>
 </html>

@@ -5611,6 +5611,9 @@ int CALLBACK DlgOpenROMProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
 					}
 				}
 
+				// Temporary fix...
+				return true;
+
 				SendDlgItemMessage(hDlg, IDC_ROM_DIR, WM_SETREDRAW, FALSE, 0);
 				if(result==ERROR_SUCCESS)
 				{
