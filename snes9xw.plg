@@ -1,0 +1,95 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Snes9X - Win32 C core--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP18D.tmp" with contents
+[
+zdll.lib comctl32.lib comdlg32.lib shell32.lib ole32.lib winmm.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib wsock32.lib advapi32.lib ddraw.lib dsound.lib dxguid.lib delayimp.lib fmodvc.lib vfw32.lib /nologo /subsystem:windows /incremental:no /pdb:"Snes9X___Win32_C_core/snes9xw.pdb" /debug /machine:I386 /out:"Snes9X___Win32_C_core/snes9xw.exe" /libpath:"H:\FMOD\api\lib" /libpath:"H:\glide2x\lib" /delayload:fmod.dll 
+".\Snes9X___Win32_C_core\AVIOutput.obj"
+".\Snes9X___Win32_C_core\DirectX.obj"
+".\Snes9X___Win32_C_core\InputCustom.obj"
+".\Snes9X___Win32_C_core\Render.obj"
+".\Release\Emu\Win32.obj"
+".\Snes9X___Win32_C_core\wsnes9x.obj"
+".\Snes9X___Win32_C_core\2xsai.obj"
+".\Release\Emu\apu.obj"
+".\Snes9X___Win32_C_core\Apudebug.obj"
+".\Snes9X___Win32_C_core\C4.obj"
+".\Release\Emu\cheats.obj"
+".\Snes9X___Win32_C_core\cheats2.obj"
+".\Snes9X___Win32_C_core\clip.obj"
+".\Release\Emu\cpu.obj"
+".\Snes9X___Win32_C_core\cpuexec.obj"
+".\Snes9X___Win32_C_core\cpuops.obj"
+".\Release\Emu\data.obj"
+".\Release\Emu\debug.obj"
+".\Release\Emu\dma.obj"
+".\Snes9X___Win32_C_core\dsp1.obj"
+".\Release\Emu\gfx.obj"
+".\Snes9X___Win32_C_core\globals.obj"
+".\Snes9X___Win32_C_core\loadzip.obj"
+".\Snes9X___Win32_C_core\memmap.obj"
+".\Snes9X___Win32_C_core\movie.obj"
+".\Snes9X___Win32_C_core\Netplay.obj"
+".\Release\Emu\ppu.obj"
+".\Snes9X___Win32_C_core\Sa1.obj"
+".\Snes9X___Win32_C_core\sa1cpu.obj"
+".\Snes9X___Win32_C_core\Sdd1.obj"
+".\Snes9X___Win32_C_core\Server.obj"
+".\Snes9X___Win32_C_core\snaporig.obj"
+".\Release\Emu\snapshot.obj"
+".\Snes9X___Win32_C_core\Snes9x.obj"
+".\Release\Emu\soundux.obj"
+".\Snes9X___Win32_C_core\spc700.obj"
+".\Snes9X___Win32_C_core\Srtc.obj"
+".\Release\Emu\tile.obj"
+".\Snes9x\I386\fxemu2.obj"
+".\Snes9x\I386\fxemu2b.obj"
+".\Snes9x\I386\fxemu2c.obj"
+".\Snes9x\I386\fxtable.obj"
+".\Snes9x\I386\sfxproc.obj"
+".\Snes9x\I386\zsnes.obj"
+".\Snes9x\I386\spc.obj"
+".\Snes9x\I386\2xsaimmx.OBJ"
+".\Snes9x\I386\bilinear.OBJ"
+".\Snes9X___Win32_C_core\Explode.obj"
+".\Snes9X___Win32_C_core\Unreduce.obj"
+".\Snes9X___Win32_C_core\Unshrink.obj"
+".\Snes9X___Win32_C_core\Unzip.obj"
+".\Snes9X___Win32_C_core\7zlzma.obj"
+".\Snes9X___Win32_C_core\crc32.obj"
+".\Snes9X___Win32_C_core\iiostrm.obj"
+".\Snes9X___Win32_C_core\inbyte.obj"
+".\Snes9X___Win32_C_core\jma.obj"
+".\Snes9X___Win32_C_core\lzma.obj"
+".\Snes9X___Win32_C_core\lzmadec.obj"
+".\Snes9X___Win32_C_core\s9x-jma.obj"
+".\Snes9X___Win32_C_core\winout.obj"
+".\Snes9X___Win32_C_core\Auxmath.obj"
+".\Snes9X___Win32_C_core\c4emu.obj"
+".\Snes9X___Win32_C_core\obc1.obj"
+".\Snes9X___Win32_C_core\screenshot.obj"
+".\Snes9X___Win32_C_core\sdd1emu.obj"
+".\Snes9X___Win32_C_core\seta.obj"
+".\Snes9X___Win32_C_core\seta010.obj"
+".\Snes9X___Win32_C_core\seta011.obj"
+".\Snes9X___Win32_C_core\seta018.obj"
+".\Snes9X___Win32_C_core\spc7110.obj"
+".\Snes9X___Win32_C_core\0snes9X.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Steve\LOCALS~1\Temp\RSP18D.tmp"
+<h3>Output Window</h3>
+Linking...
+zdll.lib(d000034.o) : warning LNK4078: multiple ".text" sections found with different attributes (E0300020)
+
+
+
+<h3>Results</h3>
+snes9xw.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>
