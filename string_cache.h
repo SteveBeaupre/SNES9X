@@ -96,7 +96,7 @@
 
 #define REG_KEY_VER  "1.31"
 
-#define DISCLAIMER_TEXT        "Snes9X v1.43 for Windows.\r\n" \
+#define DISCLAIMER_TEXT        "Snes9X v1.45 for Windows.\r\n" \
         "(c) Copyright 1996 - 2002 Gary Henderson and Jerremy Koot.\r\n" \
         "(c) Copyright 2001- 2004 John Weidman.\r\n" \
 	"(c) Copyright 2002 - 2004 blip, Brad Jorsch, funkyass, Joel Yliluoma, Kris Bleakley, Matthew Kendora, Nach, Peter Bortas, zones.\r\n\r\n" \
@@ -105,7 +105,12 @@
 		"for the SNES on your PC.\r\n\r\n" \
 		"Please visit http://www.snes9x.com for\r\n" \
 		"up-to-the-minute information and help on Snes9X.\r\n\r\n" \
-		"Nintendo is a trade mark."
+		"Nintendo is a trade mark." \
+		"" \
+		"Custom version 1.45 build by Steve Beaupré" \
+		"Fix: Removed the stupid black bar at the bottom in stretched mode" \
+		"Fix: Added \"Keep aspect ratio\" options for stretched mode" \
+		"Fix: Remplaced buggy open rom dialog by normal open file dialog" 
 
 
 

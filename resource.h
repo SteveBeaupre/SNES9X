@@ -162,6 +162,7 @@
 #define IDC_TRANS                       1113
 #define IDC_HIRES                       1114
 #define IDC_CHEAT_CODE                  1115
+#define IDC_KEEP_ASPECT_RATIO           1115
 #define IDC_FILTERBOX                   1116
 #define IDC_AUTOFRAME                   1117
 #define IDC_LIMITFRAMES                 1118

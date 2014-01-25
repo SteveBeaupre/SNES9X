@@ -152,6 +152,7 @@ struct sGUI {
     bool DoubleBuffered;
     bool FullScreen;
     bool Stretch;
+    bool KeepAspectRatio;
     bool ScreenCleared;
     bool IgnoreNextMouseMove;
     RECT window_size;

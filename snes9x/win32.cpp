@@ -1303,6 +1303,15 @@ bool8 S9xDeinitUpdate (int Width, int Height, bool8 sixteen_bit)
     bool PrimarySurfaceLockFailed = false;
     RECT srcRect;
 
+	/*bool TakePPUScreenshot = false;
+	if(TakePPUScreenshot){
+		FILE *f = fopen("C:\\Temp\\snesscreenshot.raw", "wb+");
+		if(f){
+			fwrite(GFX.SubScreen, 1, EXT_PITCH * EXT_HEIGHT, f);
+			fclose(f);
+		}
+	}*/
+
 #ifdef USE_DIRECTX3D
     HRESULT Render3DEnvironment ();
 
@@ -1311,14 +1320,15 @@ bool8 S9xDeinitUpdate (int Width, int Height, bool8 sixteen_bit)
 #endif
 
     Src.Width = Width;
-	if(Height%SNES_HEIGHT)
+    Src.Height = Height;
+	/*if(Height%SNES_HEIGHT)
 	    Src.Height = Height;
 	else
 	{
 		if(Height==SNES_HEIGHT)
 			Src.Height=SNES_HEIGHT_EXTENDED;
 		else Src.Height=SNES_HEIGHT_EXTENDED<<1;
-	}
+	}*/
     Src.Pitch = GFX.Pitch;
     Src.Surface = GFX.Screen;
 
@@ -1438,16 +1448,40 @@ bool8 S9xDeinitUpdate (int Width, int Height, bool8 sixteen_bit)
             
             if (GUI.Stretch)
             {	
-			/*	p.x = p.y = 0;
-				
-                ClientToScreen (GUI.hWnd, &p);
-				GetClientRect (GUI.hWnd, &dstRect);
-				OffsetRect(&dstRect, p.x, p.y);
-				*/
 				p.x = p.y = 0;
 				ClientToScreen (GUI.hWnd, &p);
 				GetClientRect (GUI.hWnd, &dstRect);
-				dstRect.bottom = int(double(dstRect.bottom) * double(239.0 / 240.0));
+				//dstRect.bottom = int(double(dstRect.bottom) * double(239.0 / 240.0));
+
+				// Add keep aspect ratio code here
+				if(GUI.KeepAspectRatio){
+					float W1 = (float)Width;
+					float H1 = (float)Height;
+
+					float WndWidth  = (float)dstRect.right;
+					float WndHeight = (float)dstRect.bottom;
+
+					float OriRatio = W1 / H1;
+					float WndRatio = WndWidth / WndHeight; 
+				
+					if(WndRatio >= OriRatio){ // Width too large...
+
+						int W2 = (int)((W1 * WndHeight) / H1);
+						int Offset = (int)((WndWidth - W2) / 2.0f);
+
+						dstRect.left = Offset;
+						dstRect.right -= Offset;
+
+					} else { // Height too large...
+						
+						int H2 = (int)((H1 * WndWidth) / W1);
+						int Offset = (int)((WndHeight - H2) / 2.0f);
+
+						dstRect.top = Offset;
+						dstRect.bottom -= Offset;
+					}				
+				}
+
 				OffsetRect(&dstRect, p.x, p.y);
             }
             else
@@ -1463,7 +1497,7 @@ bool8 S9xDeinitUpdate (int Width, int Height, bool8 sixteen_bit)
                         height *= 2;
                 }
                 p.x = ((dstRect.right - dstRect.left) - width) >> 1;
- 			p.y = ((dstRect.bottom - dstRect.top) - height) >> 1;
+ 				p.y = ((dstRect.bottom - dstRect.top) - height) >> 1;
                 ClientToScreen (GUI.hWnd, &p);
                 
                 dstRect.top = p.y;
@@ -1489,6 +1523,7 @@ bool8 S9xDeinitUpdate (int Width, int Height, bool8 sixteen_bit)
             else 
                 lpDDSurface2 = pDDSurface;
             
+			//dstRect.bottom += 30;
             while (lpDDSurface2->Blt (&dstRect, DirectX.lpDDSOffScreen2, &srcRect, DDBLT_WAIT, NULL) == DDERR_SURFACELOST)
                 lpDDSurface2->Restore ();
         }

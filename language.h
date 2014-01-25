@@ -98,12 +98,16 @@
 #define DISCLAIMER_TEXT        "Snes9X v%s for Windows.\r\n" \
         "(c) Copyright 1996 - 2002 Gary Henderson and Jerremy Koot.\r\n" \
         "(c) Copyright 2001- 2004 John Weidman.\r\n" \
-	"(c) Copyright 2002 - 2004 blip, Brad Jorsch, funkyass, Joel Yliluoma, Kris Bleakley, Matthew Kendora, Nach, Peter Bortas, zones.\r\n\r\n" \
-	"Snes9X is a Super Nintendo Entertainment System\r\n" \
+		"(c) Copyright 2002 - 2004 blip, Brad Jorsch, funkyass, Joel Yliluoma, Kris Bleakley, Matthew Kendora, Nach, Peter Bortas, zones.\r\n\r\n" \
+		"Custom version 1.45 build by Steve Beaupré.\r\n" \
+		"Fix: Removed the stupid black bar at the bottom in stretched mode.\r\n" \
+		"Fix: Added \"Keep aspect ratio\" options for stretched mode.\r\n" \
+		"Fix: Remplaced buggy open rom dialog by normal open file dialog.\r\n\r\n" \
+		"Snes9X is a Super Nintendo Entertainment System\r\n" \
 		"emulator that allows you to play most games designed\r\n" \
-		"for the SNES on your PC.\r\n\r\n" \
+		"for the SNES on your PC.\r\n" \
 		"Please visit http://www.snes9x.com for\r\n" \
-		"up-to-the-minute information and help on Snes9X.\r\n\r\n" \
+		"up-to-the-minute information and help on Snes9X.\r\n" \
 		"Nintendo is a trade mark."
 
 

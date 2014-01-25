@@ -91,6 +91,8 @@
   Nintendo Co., Limited and its subsidiary companies.
 *******************************************************************************/
 
+#define USE_NEW_OPEN_ROM_DIALOG
+
 #define ListView_SetCheckState(w,i,f) ListView_SetItemState(w,i,INDEXTOSTATEIMAGEMASK((f)+1),LVIS_STATEIMAGEMASK)
 #define TreeView_SetItemState(w,i,d,m) \
 { \
@@ -1087,10 +1089,41 @@ LRESULT CALLBACK WinProc(
 						icex.dwSize = sizeof(INITCOMMONCONTROLSEX);
 						icex.dwICC   = ICC_LISTVIEW_CLASSES|ICC_TREEVIEW_CLASSES;
 						InitCommonControlsEx(&icex);
+
+#ifdef USE_NEW_OPEN_ROM_DIALOG
+						ZeroMemory(filename, MAX_PATH);
+
+						OPENFILENAME of;
+						ZeroMemory(&of, sizeof(of));
+						of.lStructSize = sizeof(of);
+						of.hwndOwner = hWnd;
+						of.lpstrFilter = "ROM Files\0*.smc\0\0";
+						of.lpstrFile = filename;
+						of.nMaxFile = MAX_PATH;
+						of.Flags = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
+						of.lpstrDefExt = "SMC";
 						
-						if(1<=DialogBoxParam(g_hInst, MAKEINTRESOURCE(IDD_OPEN_ROM), hWnd, DlgOpenROMProc, (LPARAM)filename))
-							
+						DWORD dw = MAX_PATH;
+						TCHAR OpenDirPath[MAX_PATH];
+						ZeroMemory(OpenDirPath, MAX_PATH);
+
+						long result = ERROR_SUCCESS-1;
+
+						HKEY hKey;
+						if(!RegOpenKeyEx(HKEY_CURRENT_USER, MY_REG_KEY, 0, KEY_ALL_ACCESS, &hKey)){
+							result = RegQueryValueEx(hKey, TEXT("Last Directory"), NULL,NULL, (uint8*)OpenDirPath,&dw);
+							RegCloseKey(hKey);
+							if(result == ERROR_SUCCESS)
+								of.lpstrInitialDir = OpenDirPath;
+						}
+
+						if(GetOpenFileName(&of))
 						{
+#else
+						if(1<=DialogBoxParam(g_hInst, MAKEINTRESOURCE(IDD_OPEN_ROM), hWnd, DlgOpenROMProc, (LPARAM)filename))
+						{
+#endif
+
 							if (!Settings.StopEmulation)
 							{
 								Memory.SaveSRAM (S9xGetFilename (".srm"));
@@ -2134,6 +2167,7 @@ void WinSave( void)
         SetKey( "Joypad #5", Joypad[4]);
         SetKey( "Window Geometry", GUI.window_size);
         SetKey( "Stretch", GUI.Stretch);
+        SetKey( "KeepAspectRatio", GUI.KeepAspectRatio);
         SetKey( "Fullscreen", GUI.FullScreen);
         RegSetValueEx (hKey, TEXT("Freeze File Directory"), 0, REG_SZ,
 			(const unsigned char *) GUI.FreezeFileDir, 
@@ -2238,6 +2272,7 @@ static void WinSetDefaultValues ()
     GUI.DoubleBuffered = false;
     GUI.FullScreen = false;
     GUI.Stretch = false;
+    GUI.KeepAspectRatio = false;
     GUI.PausedFramesBeforeMutingSound = 20;
     GUI.FlipCounter = 0;
     GUI.NumFlipFrames = 1;
@@ -2393,6 +2428,7 @@ void WinLoad( void)
         GetKey( "Joypad #5", Joypad[4]);
         GetKey( "Window Geometry", GUI.window_size);
         GetKeyDef( "Stretch", GUI.Stretch, false);
+        GetKeyDef( "KeepAspectRatio", GUI.KeepAspectRatio, false);
         GetKeyDef( "Fullscreen", GUI.FullScreen, false);
         GetKeyDef( "Playback Rate", Settings.SoundPlaybackRate, 22050);
         GetKeyDef( "Stereo Sound", Settings.Stereo, true);
@@ -3242,8 +3278,39 @@ bool8 S9xLoadROMImage (const TCHAR *string)
 	icex.dwICC   = ICC_LISTVIEW_CLASSES|ICC_TREEVIEW_CLASSES;
 	InitCommonControlsEx(&icex);
 	
+#ifdef USE_NEW_OPEN_ROM_DIALOG
+						ZeroMemory(FileName, _MAX_PATH);
+
+						OPENFILENAME of;
+						ZeroMemory(&of, sizeof(of));
+						of.lStructSize = sizeof(of);
+						of.hwndOwner = GUI.hWnd;
+						of.lpstrFilter = "ROM Files\0*.smc\0\0";
+						of.lpstrFile = FileName;
+						of.nMaxFile = _MAX_PATH;
+						of.Flags = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
+						of.lpstrDefExt = "SMC";
+						
+						DWORD dw = _MAX_PATH;
+						TCHAR OpenDirPath[_MAX_PATH];
+						ZeroMemory(OpenDirPath, _MAX_PATH);
+
+						long result = ERROR_SUCCESS-1;
+
+						HKEY hKey;
+						if(!RegOpenKeyEx(HKEY_CURRENT_USER, MY_REG_KEY, 0, KEY_ALL_ACCESS, &hKey)){
+							result = RegQueryValueEx(hKey, TEXT("Last Directory"), NULL,NULL, (uint8*)OpenDirPath,&dw);
+							RegCloseKey(hKey);
+							if(result == ERROR_SUCCESS)
+								of.lpstrInitialDir = OpenDirPath;
+						}
+
+						if(GetOpenFileName(&of))
+						{
+#else
 	if(1<=DialogBoxParam(g_hInst, MAKEINTRESOURCE(IDD_OPEN_ROM), GUI.hWnd, DlgOpenROMProc, (LPARAM)FileName))
     {
+#endif
         if (!Settings.StopEmulation)
         {
             Memory.SaveSRAM (S9xGetFilename (".srm"));
@@ -4793,7 +4860,7 @@ int CALLBACK DlgAboutProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
 	case WM_INITDIALOG:
 		{
-			TCHAR buf[512];//find better way of dealing.
+			TCHAR buf[1024];//find better way of dealing.
 			sprintf(buf,TEXT(DISCLAIMER_TEXT),VERSION);
 			hBmp=(HBITMAP)LoadImage(NULL, TEXT("RedChaos1.bmp"), IMAGE_BITMAP, 0,0, LR_CREATEDIBSECTION | LR_LOADFROMFILE);
 			SetDlgItemText(hDlg, IDC_DISCLAIMER, buf);
@@ -5685,7 +5752,7 @@ int CALLBACK DlgOpenROMProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
 								TCHAR get_dir[MAX_PATH];
 								while(TreeView_GetChild(GetDlgItem(hDlg, IDC_ROM_DIR),hTreePrev))
 								{
-									TreeView_DeleteItem(GetDlgItem(hDlg, IDC_ROM_DIR), TreeView_GetChild(GetDlgItem(hDlg, IDC_ROM_DIR),hTreePrev));
+									//TreeView_DeleteItem(GetDlgItem(hDlg, IDC_ROM_DIR), TreeView_GetChild(GetDlgItem(hDlg, IDC_ROM_DIR),hTreePrev));
 								}
 								TreeView_SetItemState(GetDlgItem(hDlg, IDC_ROM_DIR), hTreePrev, TVIS_EXPANDED ,TVIS_EXPANDED );
 								GetPathFromTree(hDlg, IDC_ROM_DIR, get_dir, hTreePrev);
@@ -6954,6 +7021,10 @@ int CALLBACK DlgFunky(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
 		{
 			SendDlgItemMessage(hDlg, IDC_STRETCH, BM_SETCHECK, (WPARAM)BST_CHECKED, 0);
 		}
+		if(GUI.KeepAspectRatio)
+		{
+			SendDlgItemMessage(hDlg, IDC_KEEP_ASPECT_RATIO, BM_SETCHECK, (WPARAM)BST_CHECKED, 0);
+		}
 		if(GUI.FullScreen)
 		{
 			SendDlgItemMessage(hDlg, IDC_FULLSCREEN, BM_SETCHECK, (WPARAM)BST_CHECKED, 0);
@@ -7180,6 +7251,7 @@ int CALLBACK DlgFunky(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
 			
 			
 			GUI.Stretch = (bool)(IsDlgButtonChecked(hDlg, IDC_STRETCH)==BST_CHECKED);
+			GUI.KeepAspectRatio = (bool)(IsDlgButtonChecked(hDlg, IDC_KEEP_ASPECT_RATIO)==BST_CHECKED);
 			GUI.FullScreen = (bool)(IsDlgButtonChecked(hDlg, IDC_FULLSCREEN)==BST_CHECKED);
 			Settings.DisplayFrameRate = IsDlgButtonChecked(hDlg, IDC_SHOWFPS);
 			
